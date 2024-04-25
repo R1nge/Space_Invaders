@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UI Config
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 8335151913570239623, guid: d2a0672d369a5eb40b7233d92506b29b, type: 3}
-  gameUI: {fileID: 8335151913570239623, guid: 9d145217430945b41a219a360d4ba837, type: 3}
+  gameUI: {fileID: 2487124007128708255, guid: 9d145217430945b41a219a360d4ba837, type: 3}

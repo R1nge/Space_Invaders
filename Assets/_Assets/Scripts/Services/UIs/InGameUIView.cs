@@ -22,7 +22,6 @@ namespace _Assets.Scripts.Services.UIs
             _scoreService.Score.Subscribe(score => scoreText.text = score.ToString()).AddTo(this);
             pauseButton.onClick.AddListener(Pause);
             _inputService.Init(joystick, shootPrimary, shootSecondary);
-            Debug.Log("Init view");
         }
 
         private void Pause() => _uiStateMachine.SwitchState(UIStateType.Pause);
