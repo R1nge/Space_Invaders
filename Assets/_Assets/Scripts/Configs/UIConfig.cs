@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Assets.Scripts.Services.UIs;
+using UnityEngine;
 
 namespace _Assets.Scripts.Configs
 {
@@ -6,8 +7,8 @@ namespace _Assets.Scripts.Configs
     public class UIConfig : ScriptableObject
     {
         [SerializeField] private GameObject pauseUI;
-        [SerializeField] private GameObject gameUI;
+        [SerializeField] private InGameUIView gameUI;
         public GameObject PauseUI => pauseUI;
-        public GameObject GameUI => gameUI;
+        public InGameUIView GameUI => gameUI;
     }
 }

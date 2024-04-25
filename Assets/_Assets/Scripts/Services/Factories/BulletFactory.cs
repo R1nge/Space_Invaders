@@ -30,7 +30,6 @@ namespace _Assets.Scripts.Services.Factories
                 default:
                     throw new ArgumentOutOfRangeException(nameof(bulletType), bulletType, null);
             }
-            
         }
     }
 }
