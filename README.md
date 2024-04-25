@@ -7,3 +7,20 @@ Since I were asked to create an MVP I cut some corners
 - Bullets don't get destroyed off screen
 - Since no one asked the score doesn't reset on next level
 - The game doesn't really pause, just changes UI
+- Enemies don't drop anything since ammo is infinite
+
+```
+EnemyView : MonoBehaviour
+{
+  ...
+
+  public void Die()
+  {
+    ...
+    var typesLength = Enum.GetValues(typeof(BulletType)).Length;
+    var type = (BulletType) Random.Range(0, typesLength);
+    _ammoFactory.Create(type);
+  }
+}
+```
+It's a bit slow, could be cached if needed, it's an MVP anyway
