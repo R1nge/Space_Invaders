@@ -2,3 +2,4 @@ May need to run `git config --system core.longpaths true` to be able to clone (W
 
 Since I were asked to create an MVP I cut some corners
 - I didn't use interfaces for damageable entities
+- Could have created a scriptable object for an enemy factory
