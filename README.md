@@ -1,4 +1,6 @@
-May need to run `git config --system core.longpaths true` to be able to clone (Will test it when it's done)
+**Unity 22.3.9f1**    
+
+May need to run `git config --system core.longpaths true` to be able to clone
 
 Since I were asked to create an MVP I cut some corners
 - I didn't use interfaces for damageable entities
