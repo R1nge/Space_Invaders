@@ -8,8 +8,8 @@ namespace _Assets.Scripts.Services
     public class ResetService
     {
         private PlayerView _player;
-        private List<EnemyView> _enemies;
-        private List<GameObject> _bullets;
+        private List<EnemyView> _enemies = new();
+        private readonly List<GameObject> _bullets = new();
 
         public void SetPlayer(PlayerView player) => _player = player;
         

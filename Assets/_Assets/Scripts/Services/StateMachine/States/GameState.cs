@@ -1,4 +1,5 @@
 ﻿using _Assets.Scripts.Services.Factories;
+using _Assets.Scripts.Services.UIs.StateMachine;
 using UnityEngine;
 
 namespace _Assets.Scripts.Services.StateMachine.States
@@ -9,14 +10,16 @@ namespace _Assets.Scripts.Services.StateMachine.States
         private readonly PlayerFactory _playerFactory;
         private readonly EnemyFactory _enemyFactory;
         private readonly ResetService _resetService;
+        private readonly UIStateMachine _uiStateMachine;
 
         public GameState(GameStateMachine stateMachine, PlayerFactory playerFactory, EnemyFactory enemyFactory,
-            ResetService resetService)
+            ResetService resetService, UIStateMachine uiStateMachine)
         {
             _stateMachine = stateMachine;
             _playerFactory = playerFactory;
             _enemyFactory = enemyFactory;
             _resetService = resetService;
+            _uiStateMachine = uiStateMachine;
         }
 
         public void Enter()
@@ -26,6 +29,8 @@ namespace _Assets.Scripts.Services.StateMachine.States
             
             _resetService.SetPlayer(player);
             _resetService.SetEnemies(enemies);
+
+            _uiStateMachine.SwitchState(UIStateType.Game);
         }
 
         public void Exit()

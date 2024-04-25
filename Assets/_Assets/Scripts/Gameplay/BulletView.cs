@@ -11,6 +11,7 @@ namespace _Assets.Scripts.Gameplay
         [SerializeField] private BulletConfig bulletConfig;
         private BulletController _bulletController;
         [Inject] private ResetService _resetService;
+        private bool _collided;
 
         private void Start()
         {
@@ -20,8 +21,11 @@ namespace _Assets.Scripts.Gameplay
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (_collided) return;
+
             if (other.TryGetComponent<EnemyView>(out var enemy))
             {
+                _collided = true;
                 _resetService.RemoveBullet(gameObject);
                 enemy.Die();
                 Destroy(gameObject);

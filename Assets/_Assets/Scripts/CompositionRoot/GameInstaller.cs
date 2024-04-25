@@ -11,6 +11,8 @@ namespace _Assets.Scripts.CompositionRoot
     {
         public override void InstallBindings()
         {
+            Container.Bind<ScoreService>().AsSingle();
+            
             Container.Bind<ResetService>().AsSingle();
             
             Container.Bind<BulletFactory>().AsSingle();
