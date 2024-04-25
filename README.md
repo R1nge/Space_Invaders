@@ -7,6 +7,7 @@ Since I were asked to create an MVP I cut some corners
 - Bullets don't get destroyed off screen
 - Since no one asked the score doesn't reset on next level
 - The game doesn't really pause, just changes UI
+- The game uses old input system
 - Enemies don't drop anything since ammo is infinite
 
 ```
