@@ -1,4 +1,5 @@
 ﻿using System;
+using _Assets.Scripts.Services.Factories;
 using _Assets.Scripts.Services.StateMachine.States;
 using _Assets.Scripts.Services.UIs.StateMachine;
 
@@ -7,10 +8,12 @@ namespace _Assets.Scripts.Services.StateMachine
     public class GameStatesFactory
     {
         private readonly UIStateMachine _uiStateMachine;
+        private readonly PlayerFactory _playerFactory;
 
-        private GameStatesFactory(UIStateMachine uiStateMachine)
+        private GameStatesFactory(UIStateMachine uiStateMachine, PlayerFactory playerFactory)
         {
             _uiStateMachine = uiStateMachine;
+            _playerFactory = playerFactory;
         }
 
         public IState CreateState(GameStateType gameStateType, GameStateMachine gameStateMachine)
@@ -20,7 +23,7 @@ namespace _Assets.Scripts.Services.StateMachine
                 case GameStateType.Init:
                     return new InitState(gameStateMachine, _uiStateMachine);
                 case GameStateType.Game:
-                    return new GameState(gameStateMachine);
+                    return new GameState(gameStateMachine, _playerFactory);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(gameStateType), gameStateType, null);
             }

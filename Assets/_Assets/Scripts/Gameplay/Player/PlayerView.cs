@@ -8,10 +8,9 @@ namespace _Assets.Scripts.Gameplay.Player
         [SerializeField] private PlayerConfig playerConfig;
         private PlayerMovementController _playerMovementController;
 
-        private void Start()
+        public void Init()
         {
             _playerMovementController = new PlayerMovementController(transform);
-            
             _playerMovementController.Init(playerConfig.HorizontalClamp, playerConfig.VerticalClamp);
         }
 

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   horizontalClamp: 8.5
-  verticalClamp: 1
+  verticalClamp: 2
