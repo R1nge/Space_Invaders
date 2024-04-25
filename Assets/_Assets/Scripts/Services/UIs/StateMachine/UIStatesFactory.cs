@@ -16,10 +16,10 @@ namespace _Assets.Scripts.Services.UIs.StateMachine
         {
             switch (uiStateType)
             {
-                case UIStateType.Loading:
-                    return new UILoadingState(_uiFactory, uiStateMachine);
                 case UIStateType.Game:
                     return new UIGameState(_uiFactory);
+                case UIStateType.Pause:
+                    return new UIPauseState(_uiFactory);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(uiStateType), uiStateType, null);
             }

@@ -8,7 +8,6 @@ namespace _Assets.Scripts.Services.StateMachine
         {
             States = new Dictionary<GameStateType, IState>
             {
-                { GameStateType.Init, gameStatesFactory.CreateState(GameStateType.Init, this) },
                 { GameStateType.Game, gameStatesFactory.CreateState(GameStateType.Game, this) }
             };
         }

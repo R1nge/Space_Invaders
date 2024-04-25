@@ -8,8 +8,8 @@ namespace _Assets.Scripts.Services.UIs.StateMachine
         {
             States = new Dictionary<UIStateType, IState>
             {
-                { UIStateType.Loading, uiStatesFactory.CreateState(UIStateType.Loading, this) },
-                { UIStateType.Game, uiStatesFactory.CreateState(UIStateType.Game, this) }
+                { UIStateType.Game, uiStatesFactory.CreateState(UIStateType.Game, this) },
+                { UIStateType.Pause, uiStatesFactory.CreateState(UIStateType.Pause, this) }
             };
         }
     }

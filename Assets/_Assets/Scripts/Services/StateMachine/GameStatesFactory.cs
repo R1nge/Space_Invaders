@@ -29,8 +29,6 @@ namespace _Assets.Scripts.Services.StateMachine
         {
             switch (gameStateType)
             {
-                case GameStateType.Init:
-                    return new InitState(gameStateMachine, _uiStateMachine);
                 case GameStateType.Game:
                     return new GameState(gameStateMachine, _playerFactory, _enemyFactory, _resetService,
                         _uiStateMachine, _gameOverService);

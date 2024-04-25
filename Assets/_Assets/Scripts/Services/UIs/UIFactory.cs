@@ -23,12 +23,10 @@ namespace _Assets.Scripts.Services.UIs
             {
                 case UIStateType.None:
                     break;
-                case UIStateType.Loading:
-                    _container.InstantiatePrefab(_configProvider.UIConfig.LoadingUI);
-                    break;
                 case UIStateType.Game:
-                    _container.InstantiatePrefab(_configProvider.UIConfig.GameUI);
-                    break;
+                    return _container.InstantiatePrefab(_configProvider.UIConfig.GameUI);
+                case UIStateType.Pause:
+                    return _container.InstantiatePrefab(_configProvider.UIConfig.PauseUI);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(uiStateType), uiStateType, null);
             }
