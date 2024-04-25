@@ -11,13 +11,18 @@ namespace _Assets.Scripts.Services.StateMachine
         private readonly PlayerFactory _playerFactory;
         private readonly EnemyFactory _enemyFactory;
         private readonly ResetService _resetService;
+        private readonly GameOverService _gameOverService;
+        private readonly EnemyCounter _enemyCounter;
 
-        private GameStatesFactory(UIStateMachine uiStateMachine, PlayerFactory playerFactory, EnemyFactory enemyFactory, ResetService resetService)
+        private GameStatesFactory(UIStateMachine uiStateMachine, PlayerFactory playerFactory, EnemyFactory enemyFactory,
+            ResetService resetService, GameOverService gameOverService, EnemyCounter enemyCounter)
         {
             _uiStateMachine = uiStateMachine;
             _playerFactory = playerFactory;
             _enemyFactory = enemyFactory;
             _resetService = resetService;
+            _gameOverService = gameOverService;
+            _enemyCounter = enemyCounter;
         }
 
         public IState CreateState(GameStateType gameStateType, GameStateMachine gameStateMachine)
@@ -27,7 +32,8 @@ namespace _Assets.Scripts.Services.StateMachine
                 case GameStateType.Init:
                     return new InitState(gameStateMachine, _uiStateMachine);
                 case GameStateType.Game:
-                    return new GameState(gameStateMachine, _playerFactory, _enemyFactory, _resetService, _uiStateMachine);
+                    return new GameState(gameStateMachine, _playerFactory, _enemyFactory, _resetService,
+                        _uiStateMachine, _gameOverService);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(gameStateType), gameStateType, null);
             }

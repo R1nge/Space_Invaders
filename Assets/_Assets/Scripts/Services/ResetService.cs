@@ -41,7 +41,7 @@ namespace _Assets.Scripts.Services
             
             _bullets.Clear();
             
-            Object.Destroy(_player);
+            Object.Destroy(_player.gameObject);
 
             _player = null;
         }

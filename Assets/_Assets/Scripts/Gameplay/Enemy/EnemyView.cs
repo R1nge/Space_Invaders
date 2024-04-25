@@ -10,11 +10,12 @@ namespace _Assets.Scripts.Gameplay.Enemy
         public int Score => score;
         [Inject] private ResetService _resetService;
         [Inject] private ScoreService _scoreService;
+        [Inject] private EnemyCounter _enemyCounter;
         private EnemyController _enemyController;
 
         private void Start()
         {
-            _enemyController = new EnemyController(_resetService, _scoreService, this);
+            _enemyController = new EnemyController(_resetService, _scoreService, this, _enemyCounter);
             _enemyController.Init();
         }
 

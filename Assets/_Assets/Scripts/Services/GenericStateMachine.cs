@@ -15,12 +15,6 @@ namespace _Assets.Scripts.Services
 
         public virtual void SwitchState(T stateType)
         {
-            if (Equals(CurrentStateType, stateType))
-            {
-                Debug.LogError($"Trying to switch to the same state {stateType}");
-                return;
-            }
-
             if (States.TryGetValue(stateType, out var newState))
             {
                 CurrentState?.Exit();

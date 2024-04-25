@@ -26,6 +26,9 @@ namespace _Assets.Scripts.CompositionRoot
             
             Container.Bind<GameStatesFactory>().AsSingle();
             Container.Bind<GameStateMachine>().AsSingle();
+
+            Container.Bind<EnemyCounter>().AsSingle();
+            Container.Bind<GameOverService>().AsSingle();
         }
     }
 }
