@@ -11,6 +11,7 @@ namespace _Assets.Scripts.CompositionRoot
         public override void InstallBindings()
         {
             Container.Bind<PlayerFactory>().AsSingle();
+            Container.Bind<EnemyFactory>().AsSingle();
             
             Container.Bind<UIStatesFactory>().AsSingle();
             Container.Bind<UIStateMachine>().AsSingle();
