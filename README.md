@@ -4,3 +4,4 @@ Since I were asked to create an MVP I cut some corners
 - I didn't use interfaces for damageable entities
 - Could have created a scriptable object for an enemy factory
 - Allowed bullets to kill only one enemy at once
+- Bullets don't get destroyed off screen
