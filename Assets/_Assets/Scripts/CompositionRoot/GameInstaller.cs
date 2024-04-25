@@ -1,3 +1,4 @@
+using _Assets.Scripts.Services;
 using _Assets.Scripts.Services.Factories;
 using _Assets.Scripts.Services.StateMachine;
 using _Assets.Scripts.Services.UIs;
@@ -10,6 +11,8 @@ namespace _Assets.Scripts.CompositionRoot
     {
         public override void InstallBindings()
         {
+            Container.Bind<ResetService>().AsSingle();
+            
             Container.Bind<BulletFactory>().AsSingle();
             
             Container.Bind<PlayerFactory>().AsSingle();
