@@ -1,7 +1,6 @@
 ﻿using _Assets.Scripts.Services.StateMachine;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
-using VContainer;
+using Zenject;
 
 namespace _Assets.Scripts.Misc
 {
@@ -9,6 +8,6 @@ namespace _Assets.Scripts.Misc
     {
         [Inject] private GameStateMachine _gameStateMachine;
 
-        private void Start() => _gameStateMachine.SwitchState(GameStateType.Init).Forget();
+        private void Start() => _gameStateMachine.SwitchState(GameStateType.Init);
     }
 }

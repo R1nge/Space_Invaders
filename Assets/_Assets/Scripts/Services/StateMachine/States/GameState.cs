@@ -1,15 +1,13 @@
-﻿using Cysharp.Threading.Tasks;
-
-namespace _Assets.Scripts.Services.StateMachine.States
+﻿namespace _Assets.Scripts.Services.StateMachine.States
 {
-    public class GameState : IAsyncState
+    public class GameState : IState
     {
         private readonly GameStateMachine _stateMachine;
 
         public GameState(GameStateMachine stateMachine) => _stateMachine = stateMachine;
 
-        public async UniTask Enter() { }
+        public void Enter() { }
 
-        public async UniTask Exit() { }
+        public void Exit() { }
     }
 }

@@ -13,7 +13,7 @@ namespace _Assets.Scripts.Services.StateMachine
             _uiStateMachine = uiStateMachine;
         }
 
-        public IAsyncState CreateAsyncState(GameStateType gameStateType, GameStateMachine gameStateMachine)
+        public IState CreateState(GameStateType gameStateType, GameStateMachine gameStateMachine)
         {
             switch (gameStateType)
             {

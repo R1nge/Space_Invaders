@@ -12,7 +12,7 @@ namespace _Assets.Scripts.Services.UIs.StateMachine
             _uiFactory = uiFactory;
         }
 
-        public IAsyncState CreateState(UIStateType uiStateType, UIStateMachine uiStateMachine)
+        public IState CreateState(UIStateType uiStateType, UIStateMachine uiStateMachine)
         {
             switch (uiStateType)
             {

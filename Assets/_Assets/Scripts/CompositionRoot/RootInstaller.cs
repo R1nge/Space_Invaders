@@ -1,17 +1,16 @@
 using _Assets.Scripts.Configs;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
+using Zenject;
 
 namespace _Assets.Scripts.CompositionRoot
 {
-    public class RootInstaller : LifetimeScope
+    public class RootInstaller : MonoInstaller
     {
         [SerializeField] private ConfigProvider configProvider;
-        
-        protected override void Configure(IContainerBuilder builder)
+
+        public override void InstallBindings()
         {
-            builder.RegisterComponent(configProvider);
+            Container.BindInstance(configProvider);
         }
     }
 }

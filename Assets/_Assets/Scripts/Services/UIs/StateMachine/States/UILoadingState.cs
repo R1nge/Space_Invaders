@@ -1,9 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace _Assets.Scripts.Services.UIs.StateMachine.States
 {
-    public class UILoadingState : IAsyncState
+    public class UILoadingState : IState
     {
         private readonly UIFactory _uiFactory;
         private readonly UIStateMachine _uiStateMachine;
@@ -15,14 +14,8 @@ namespace _Assets.Scripts.Services.UIs.StateMachine.States
             _uiStateMachine = uiStateMachine;
         }
 
-        public async UniTask Enter()
-        {
-            _ui = _uiFactory.CreateUI(UIStateType.Loading);
-        }
+        public void Enter() => _ui = _uiFactory.CreateUI(UIStateType.Loading);
 
-        public async UniTask Exit()
-        {
-            Object.Destroy(_ui);
-        }
+        public void Exit() => Object.Destroy(_ui);
     }
 }

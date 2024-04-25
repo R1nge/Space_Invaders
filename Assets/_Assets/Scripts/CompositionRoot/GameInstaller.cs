@@ -1,21 +1,20 @@
 using _Assets.Scripts.Services.StateMachine;
 using _Assets.Scripts.Services.UIs;
 using _Assets.Scripts.Services.UIs.StateMachine;
-using VContainer;
-using VContainer.Unity;
+using Zenject;
 
 namespace _Assets.Scripts.CompositionRoot
 {
-    public class GameInstaller : LifetimeScope
+    public class GameInstaller : MonoInstaller
     {
-        protected override void Configure(IContainerBuilder builder)
+        public override void InstallBindings()
         {
-            builder.Register<UIStatesFactory>(Lifetime.Singleton);
-            builder.Register<UIStateMachine>(Lifetime.Singleton);
-            builder.Register<UIFactory>(Lifetime.Singleton);
+            Container.Bind<UIStatesFactory>().AsSingle();
+            Container.Bind<UIStateMachine>().AsSingle();
+            Container.Bind<UIFactory>().AsSingle();
             
-            builder.Register<GameStatesFactory>(Lifetime.Singleton);
-            builder.Register<GameStateMachine>(Lifetime.Singleton);
+            Container.Bind<GameStatesFactory>().AsSingle();
+            Container.Bind<GameStateMachine>().AsSingle();
         }
     }
 }

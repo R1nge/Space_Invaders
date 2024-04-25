@@ -1,9 +1,8 @@
 ﻿using _Assets.Scripts.Services.UIs.StateMachine;
-using Cysharp.Threading.Tasks;
 
 namespace _Assets.Scripts.Services.StateMachine.States
 {
-    public class InitState : IAsyncState
+    public class InitState : IState
     {
         private readonly GameStateMachine _stateMachine;
         private readonly UIStateMachine _uiStateMachine;
@@ -14,12 +13,9 @@ namespace _Assets.Scripts.Services.StateMachine.States
             _uiStateMachine = uiStateMachine;
         }
 
-        public async UniTask Enter()
-        {
-            await _uiStateMachine.SwitchState(UIStateType.Loading);
-        }
+        public void Enter() => _uiStateMachine.SwitchState(UIStateType.Loading);
 
-        public async UniTask Exit()
+        public void Exit()
         {
         }
     }

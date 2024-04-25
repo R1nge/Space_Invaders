@@ -2,14 +2,14 @@
 
 namespace _Assets.Scripts.Services.StateMachine
 {
-    public class GameStateMachine : GenericAsyncStateMachine<GameStateType, IAsyncState>
+    public class GameStateMachine : GenericStateMachine<GameStateType, IState>
     {
         private GameStateMachine(GameStatesFactory gameStatesFactory)
         {
-            States = new Dictionary<GameStateType, IAsyncState>
+            States = new Dictionary<GameStateType, IState>
             {
-                { GameStateType.Init, gameStatesFactory.CreateAsyncState(GameStateType.Init, this) },
-                { GameStateType.Game, gameStatesFactory.CreateAsyncState(GameStateType.Game, this) }
+                { GameStateType.Init, gameStatesFactory.CreateState(GameStateType.Init, this) },
+                { GameStateType.Game, gameStatesFactory.CreateState(GameStateType.Game, this) }
             };
         }
     }
