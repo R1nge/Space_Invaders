@@ -10,6 +10,8 @@ namespace _Assets.Scripts.CompositionRoot
     {
         public override void InstallBindings()
         {
+            Container.Bind<BulletFactory>().AsSingle();
+            
             Container.Bind<PlayerFactory>().AsSingle();
             Container.Bind<EnemyFactory>().AsSingle();
             

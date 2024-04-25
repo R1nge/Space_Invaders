@@ -92,4 +92,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 7247505827077216508, guid: 1762db556f3ca9942b4c7995863604ae, type: 3}
   enemyPrefab: {fileID: 5857239760938010107, guid: 90278c0391f41384fbd89ab497861a1e, type: 3}
+  regularBulletPrefab: {fileID: 1629612127006412846, guid: da0167fda81575148ac8aac93020f7f8, type: 3}
+  rareBulletPrefab: {fileID: 1629612127006412846, guid: 8f3c25043a7aa584c96ee9d7d2149088, type: 3}
   uiConfig: {fileID: 11400000, guid: c01c0ec4a5855f641b051cf97763b193, type: 2}
